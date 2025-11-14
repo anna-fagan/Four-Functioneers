@@ -83,6 +83,7 @@
 
                 // Get const for the div boxes used
                 const homeDecorDiv = document.querySelectorAll('.home-decor');
+                const officeSuppliesDiv = document.querySelectorAll('.office-supplies');
 
                 // get the button that runs the code to display hidden boxes
                 const checkComittButton = document.getElementById('submitButton');
@@ -96,6 +97,17 @@
                     homeDecorDiv.forEach(element => {
                         element.style.display = 'none';
                     });
+                }
+
+                // Set up loop for the office supplies
+                if (officeSupplies.checked === true){
+                    officeSuppliesDiv.forEach(element =>{
+                        element.style.display = 'block';
+                    })
+                }else{
+                    officeSuppliesDiv.forEach(element =>{
+                        element.style.display = 'none';
+                    })
                 }
             }
 
