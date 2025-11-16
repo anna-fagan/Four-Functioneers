@@ -14,11 +14,77 @@
     <title>Buyer's Market</title>
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
+    <style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
 
-    <!-- PAGE-SPECIFIC CSS Needs to be re-routed?-->
-    <link rel="stylesheet" href="../css/form.css" />
-    <!--Needs to be re-routed?-->
-  </head>
+/* Body styling */
+/* body {
+    background-color: hsl(240, 55%, 84%);
+    color: #333;
+    padding: 20px;
+} */
+
+/* Form container */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #99c1f8;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels and inputs */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color:  #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Checkbox and radio layout */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Section spacing */
+div {
+    margin-bottom: 20px;
+} 
+    </style>
+</head>
   <body>
     <header>
       <h1>Buyer's Market Posting Board</h1>
@@ -31,5 +97,66 @@
       <a href="notifications_form">Get Notifications</a>
       <a href="about.html">About Us</a>
     </nav>
+
+    <form action="results.html" method="GET">
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" id="fname" placeholder="First Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email" required>
+
+        <label for="item">Item </label>
+        <input type="item" name="item" id="item" placeholder="Item name" required>
+
+        <label for="item">Price </label>
+        <input type="price" name="price" id="item" placeholder="Enter 'free' or amount under  $20' " required>
+
+        <div>
+    <label for="description">Item description</label>
+    <textarea name="description" id="description" placeholder="Describe your item"></textarea>
+</div>
+
+<div>
+    Category:
+    <div>
+        <label>
+            Home furnishings
+            <input type="checkbox" name="Home" id="Home">
+        </label>
+    </div>
+    <div>
+        <label>
+            Art supplies
+            <input type="checkbox" name="Art" id="Art">
+        </label>
+    </div>
+</div>
+
+
+
+
+
+<form>
+    <!-- <label for="webUrl">URL</label>
+    <input type="url" name="webUrl" id="webUrl">
+
+    <label for="favcolor">Favorite Color</label>
+    <input type="color" name="favcolor" id="favcolor">
+
+    <input type="hidden" name="sessionId" id="sessionId" value="SecretRandomNumberUsedtoManageTheSession"> -->
+
+    <button type="reset">Reset</button>
+    <button type="submit">Submit</button>
+</form>
+
+<form action="results.html" method="GET" enctype="multipart/form-data">
+    <input type="file" name="fileUpload" id="fileUpload">
+</form>
+
+
+    </form>
+</body>
+</html>
+
   </body>
 </html>
