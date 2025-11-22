@@ -155,6 +155,53 @@ div {
 
 
     </form>
+ <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("form");
+        const categoryError = document.querySelector(".category-error-message");
+
+        form.addEventListener("submit", (e) => {
+          // Look for all checked categories
+          const checkedCategories = document.querySelectorAll(
+            'input[name="cat"]:checked'
+          );
+           // If none are checked, show the error message and stop submission
+          if (checkedCategories.length === 0) {
+            e.preventDefault();
+            categoryError.style.display = "block";
+            return;
+          } else {
+            // Hide error if previously shown
+            categoryError.style.display = "none";
+          }
+          // If category requirement is satisfied
+          // local store and redirect
+ // --- Collect values from the form ---
+          const firstName = document.getElementById("firstName").value.trim();
+          const item = document.getElementById("item").value.trim();
+          const price = document.getElementById("price").value;
+          const description = document.getElementById("description").value;
+
+// Convert checked categories to a string
+          const categories = Array.from(
+            document.querySelectorAll('input[name="cat"]:checked')
+          )
+            .map((box) => box.value)
+            .join(", ");
+
+  // --- Save everything to localStorage ---
+          localStorage.setItem("notify_firstName", firstName);
+          localStorage.setItem("notify_item", item);
+          localStorage.setItem("notify_price", price);
+          localStorage.setItem("notify_description", description)
+          localStorage.setItem("notify_categories", categories);   
+          
+            // --- Redirect to confirmation page ---
+          e.preventDefault();
+          window.location.href = "./post-confirmation.html";
+        });
+      });
+ </script>   
 </body>
 </html>
 
