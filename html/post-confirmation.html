@@ -30,7 +30,7 @@
     
       <div class="confirm-card">
         <p class="confirm-greeting">
-          Thanks, <span id="confName">there</span> — you're all set!
+          Thanks, <span id="firstName">there</span> — you're all set!
         </p>
         <p>Here are your listing details:</p>
 
@@ -55,21 +55,30 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // 1. Get values from localStorage
-        const firstName = localStorage.getItem("notify_firstName") || "";
+         // 1. Get values from localStorage
+        const firstName = localStorage.getItem("notify_firstName") || "there";
         const item = localStorage.getItem("notify_item") || "";
         const price = localStorage.getItem("notify_price") || "";
-        const categories = localStorage.getItem("notify_categories") || "";
         const description = localStorage.getItem("notify_description") || "";
+        const categories = localStorage.getItem("notify_categories") || "";
 
         // 2. Grab the span elements
-        const nameOut = document.getElementById("confName");
-        const categoriesOut = document.getElementById("confCategories");
-        const priceOut = document.getElementById("confPrice");
-        const descOut = document.getElementById("confDesc");
+        const nameOut = document.getElementById("firstName");
         const itemOut = document.getElementById("confItem");
-
-        // 3. Friendly fallbacks + formatting
+        const priceOut = document.getElementById("confPrice");
+        const descOut = document.getElementById("confDescribe");
+        const categoriesOut = document.getElementById("confCategory");
+        
+          // 3. Fill the page
+        nameOut.textContent = firstName;
+        itemOut.textContent = item;
+        priceOut.textContent = price;
+        descOut.textContent = description;
+        categoriesOut.textContent = categories || "No category selected";
+});
+        
+        
+        // 4. Friendly fallbacks + formatting
         if (firstName) {
           nameOut.textContent = firstName;
         } else {
