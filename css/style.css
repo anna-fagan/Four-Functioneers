@@ -332,11 +332,12 @@ small {
 }
 
 .listing-block {
-  display: block;
+  display: flex;
+  flex-direction: row;
 }
 
 .listing-categories {
-  display: inline-block;
+  display: flex;
   width: 1fr;
   padding: 5px;
   margin: 15px;
@@ -366,6 +367,19 @@ small {
 
 .office-supplies {
   display: none;
+}
+
+.packing-supplies{
+  display: none;
+}
+
+.art-supplies{
+  display: none;
+}
+
+input[type="checkbox"]{
+  transform:scale(1.5);
+  margin-left:1rem;
 }
 
 /* ============================
