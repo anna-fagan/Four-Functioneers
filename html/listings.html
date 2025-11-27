@@ -15,7 +15,7 @@
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body>
+  <body class="home-bg">
     <header>
       <h1>Buyer's Market Posting Board</h1>
     </header>
@@ -23,30 +23,30 @@
     <nav>
       <a href="../index.html">Home</a>
       <a href="../html/post-form.html">Create a Post</a>
-      <a href="../html/listings.html">Post Board</a>
+      <a href="../html/listings.html">Listings</a>
       <a href="../html/notify-form.html">Get Notifications</a>
       <a href="../html/about.html">About Us</a>
     </nav>
 
     <main class="container board-container">
-      <div>
+      <div class="check-card">
         <p>
           Please select the categories you want to view from the checklist below
           and then click submit categories to load the categories requested.
         </p>
-      </div>
-      <div class="listing-block">
-        <div class="listing-categories">
-          <label for="homeDecorCheck">Home Decor</label>
-          <input type="checkbox" id="homeDecorCheck" name="home-decor" />
-        </div>
-        <div class="listing-categories">
-          <label for="officeSuppliesCheck">Office Supplies</label>
-          <input
-            type="checkbox"
-            id="officeSuppliesCheck"
-            name="office-supplies"
-          />
+        <div class="listing-block">
+          <div class="listing-categories">
+            <label for="homeDecorCheck">Home Decor</label>
+            <input type="checkbox" id="homeDecorCheck" name="home-decor" />
+          </div>
+          <div class="listing-categories">
+            <label for="officeSuppliesCheck">Office Supplies</label>
+            <input
+              type="checkbox"
+              id="officeSuppliesCheck"
+              name="office-supplies"
+            />
+          </div>
         </div>
       </div>
       <button id="submitButton" onclick="showPost()">Submit Categories</button>
