@@ -8,21 +8,27 @@
 
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <body>
+  <body class="notify-page">
     <header>
-      <h1>You're All Set!</h1>
-      <p class="tagline">Your notification preferences have been saved.</p>
+      <h1>Alerts Created!</h1>
+      <!-- <p class="tagline">Your notification preferences have been saved.</p> -->
     </header>
 
     <!-- === GLOBAL NAVIGATION === -->
     <nav>
       <a href="../index.html">Home</a>
-      <a href="./post-item.html">Create a Post</a>
-      <a href="./listings.html">Listings</a>
-      <a href="./notify-form.html">Get Notifications</a>
-      <a href="./about.html">About Us</a>
+      <a href="./post-item.html">Post</a>
+      <a href="./listings.html">Browse</a>
+      <a href="./notify-form.html">Alerts</a>
+      <a href="./about.html">About</a>
     </nav>
 
     <main class="notify-container">
@@ -33,7 +39,7 @@
         <p class="confirm-greeting">
           Thanks, <span id="confName">there</span> — you're all set!
         </p>
-        <p>Here are your notification details:</p>
+        <p>Here are your alert details:</p>
 
         <ul class="confirm-details-list">
           <li>
@@ -46,7 +52,7 @@
       </div>
 
       <a href="./notify-form.html" class="confirm-btn">
-        Return to Notifications Page
+        Return to Alerts Page
       </a>
     </main>
 

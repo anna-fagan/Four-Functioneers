@@ -15,12 +15,12 @@
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
     <style>
-      * {
+      /** {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         font-family: Verdana, sans-serif;
-      }
+      }*/ /* Commented out because overiding the global */
 
       /* Form container */
       form {
@@ -51,7 +51,7 @@
         border-radius: 4px;
       }
 
-      /* Buttons */
+      /* ==== Not needed, inherits global styles from css, safe to delete ====
       button {
         padding: 10px 20px;
         margin-right: 10px;
@@ -65,7 +65,7 @@
 
       button:hover {
         background-color: #005fa3;
-      }
+      } */
 
       /* Checkbox and radio layout */
       input[type="checkbox"],
@@ -80,16 +80,17 @@
       }
     </style>
   </head>
-  <body>
+  <body class="post-page">
     <header>
-      <h1>Buyer's Market Posting Board</h1>
+      <h1>Buyer's Market Create Post</h1>
     </header>
     <!-- ==== GLOBAL NAVIGATION ==== -->
     <nav>
       <a href="../index.html">Home</a>
-      <a href="listings.html">See Listings</a>
-      <a href="notify-form.html">Get Notifications</a>
-      <a href="about.html">About Us</a>
+      <a href="./post-item.html">Post</a>
+      <a href="./listings.html">Browse</a>
+      <a href="./notify-form.html">Alerts</a>
+      <a href="./about.html">About</a>
     </nav>
 
     <main>
@@ -132,8 +133,12 @@
         />
 
         <label for="description">Item Description</label>
-        <textarea name="description" id="description" placeholder="Describe your item."></textarea>
-     
+        <textarea
+          name="description"
+          id="description"
+          placeholder="Describe your item."
+        ></textarea>
+
         <div class="category-card">
           <label>Categories (choose one or more)</label>
 
@@ -161,7 +166,6 @@
           </div>
         </div>
 
-    
         <div class="category-error-message">
           Choose at least one category to continue.
         </div>
