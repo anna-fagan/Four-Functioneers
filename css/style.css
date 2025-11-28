@@ -1,76 +1,69 @@
 /* =========================================
    Buyer’s Market — GLOBAL STYLE SHEET
+   Team: Four Functioneers
    Author: Kelly Daniel
-   Purpose: Shared styles for the Four Functioneers project
+   Purpose: Shared styles for the full website
    ========================================= */
 
-/*. Color Palette
-    • Deep Blue: #1E3A8A (anchor color)
-    • Warm Beige: #F7F2EA
-    • Clay Brown: #B08968
-    • Soft Olive: #6B705C
-*/
-
-/* Full-page background for Home ONLY */
-.home-bg {
-  position: relative;
-}
-
-/* The image layer */
-.home-bg::before {
-  content: "";
-  position: fixed; /* fixed scroll */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-
-  background-image: url("/images/background-global.jpg");
-  background-size: cover;
-  background-position: center;
-
-  opacity: 0.45;
-  filter: blur(6px);
-  z-index: -1;
-}
-
-/* === GLOBAL Styles-base reference === */
-
+/* =========================================
+   1. GLOBAL RESET + BASE ELEMENTS
+   ========================================= */
 * {
   box-sizing: border-box;
 }
 
-/* === KEEP FOOTER AT BOTTOM OF PAGE === */
-html {
+html,
+body {
   height: 100%;
 }
 
 body {
-  height: 100%;
   display: flex;
   flex-direction: column;
-
-  font-family: Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f0efea; /* warm neutral */
   color: #222;
   line-height: 1.5;
 }
 
-/* Main stretch = footer at bottom always */
 main {
-  flex: 1;
+  flex: 1; /* footer stays at bottom */
 }
 
-/* === HEADERS & FOOTERS === */
-
+/* =========================================
+   2. HEADER + FOOTER
+   ========================================= */
 header,
 footer {
-  background-color: #334155;
-  color: #d9d0c1;
+  background-color: rgba(51, 65, 85, 0.92); /* slate blue translucent */
+  color: #fafaf8;
   text-align: center;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  padding: 2.5rem 1rem 2rem;
+}
+
+header h1 {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+header .tagline {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+footer {
+  padding: 1rem 0;
+  min-height: 80px;
 }
 
 footer p {
@@ -78,53 +71,185 @@ footer p {
   margin: 0.25rem 0;
 }
 
-/* === NAVIGATION === */
+/* =========================================
+   3. GLOBAL TYPOGRAPHY
+   ========================================= */
+h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #334155; /* slate blue */
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
 
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #334155;
+  margin: 0.75rem 0 0.5rem;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================
+   4. GLOBAL FORM TYPOGRAPHY SYSTEM
+   ========================================= */
+
+/* Labels (aligned with global h3 tone) */
+label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+/* Inputs, selects, textareas */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 400;
+  color: #333;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+/* Focus rings */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-right: 0.4rem;
+  accent-color: #2563eb;
+}
+
+/* Placeholder text (Safari needs extra help) */
+::placeholder {
+  color: #94a3b8; /* slate-400 */
+  opacity: 1;
+}
+
+/* Small helper text */
+small {
+  display: block;
+  margin-top: 0.25rem;
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Error message */
+.error-message {
+  color: #b91c1c;
+  font-weight: 600;
+  margin: -0.5rem 0 0.75rem;
+}
+
+/* =========================================
+   5. NAVIGATION
+   ========================================= */
 nav {
-  background-color: #475569;
+  background-color: #475569; /* slate grey-blue */
   padding: 0.75rem;
-  text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
 }
 
 nav a {
-  color: #d9d0c1;
+  color: #fafaf8;
   text-decoration: none;
-  margin: 0 1rem;
-  font-weight: bold;
-  padding: 0.55rem 1.2rem;
-  border-radius: 15px;
-  display: inline-block;
+  width: 120px; /* fixed width for uniform buttons */
+  padding: 0.7rem 0;
+  text-align: center;
+  font-weight: 500;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.15s ease;
 }
 
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: rgba(240, 239, 234, 0.3); /* soft neutral */
 }
 
-/* === BUTTONS === */
+/* ACTIVE NAV STATE (auto-highlight current page) */
+.home-page nav a[href="index.html"],
+.listings-page nav a[href="./listings.html"],
+.notify-page nav a[href="./notify-form.html"],
+.about-page nav a[href="./about.html"],
+.post-page nav a[href="./post-item.html"] {
+  background-color: rgba(153, 217, 140, 0.18); /* translucent green */
+  font-weight: 600;
+  color: #fafaf8;
+  box-shadow: 0 0 0 2px rgba(71, 85, 105, 0.45), 0 4px 6px rgba(0, 0, 0, 0.25);
+}
 
+/* =========================================
+   6. GLOBAL BUTTONS (all non-nav buttons)
+   ========================================= */
 button,
-.btn {
-  background-color: #2563eb;
-  color: white;
+.btn,
+.confirm-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #7fbf73; /* sage green */
+  color: #ffffff;
+  font-weight: 500;
   border: none;
   border-radius: 6px;
-  padding: 0.5rem 1.2rem;
+  padding: 0.6rem 1.4rem;
   cursor: pointer;
   font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 button:hover,
-.btn:hover {
-  background-color: #1e40af;
+.btn:hover,
+.confirm-btn:hover {
+  background-color: #6aa960;
 }
 
-/* === LAYOUT HELPERS === */
+/* Confirm button layout */
+.confirm-btn {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  width: fit-content;
+}
 
+/* Spacing for multiple inline buttons */
+button + button,
+.btn + .btn {
+  margin-left: 0.75rem;
+}
+
+/* =========================================
+   7. LAYOUT HELPERS
+   ========================================= */
 .container {
   width: 90%;
   max-width: 1100px;
@@ -140,75 +265,29 @@ button:hover,
   text-align: center;
 }
 
-/* === Shared Element Styles for FORMS === */
-
-label {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-weight: bold;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 0.55rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 0.95rem;
-}
-
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 0.4rem;
-}
-
-.error-message {
-  color: #b91c1c;
-  font-weight: bold;
-  margin-top: -0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-small {
-  display: block;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  color: #555;
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-/* ============================
-   Hero Section — Buyer’s Market
-   ============================ */
-
+/* =========================================
+   8. HERO SECTION
+   ========================================= */
 .hero {
   width: 100%;
   height: 500px;
   background-image: url("/images/hero.jpg");
   background-size: cover;
   background-position: center;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 6px 6px;
   overflow: hidden;
   position: relative;
   margin-bottom: 2rem;
   opacity: 0.9;
-  /*filter: blur(0.2px);*/
 }
 
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-image: inherit;
   background-size: inherit;
   background-position: inherit;
-
   opacity: 0.05;
   z-index: 0;
 }
@@ -218,14 +297,14 @@ small {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: transparent;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #ffffff;
-  padding-top: 140px;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  padding-bottom: 60px;
 }
 
 .hero-overlay h1 {
@@ -235,19 +314,17 @@ small {
   font-weight: 600;
 }
 
-.hero-overlay p {
-  font-size: 1rem;
-  color: #99d98c;
-  max-width: 650px;
-  line-height: 1.4;
-}
-
-/* ============================
-   Home Page Styles
-   ============================ */
-
+/* =========================================
+   9. HOME PAGE
+   ========================================= */
 .home-sections {
   margin-top: 2rem;
+}
+
+.home-sections h2 {
+  border-bottom: 2px solid rgba(153, 217, 140, 0.35);
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
 }
 
 .intro {
@@ -257,7 +334,6 @@ small {
 
 .intro h2 {
   font-size: 1.8rem;
-  margin-bottom: 0.5rem;
   color: #334155;
 }
 
@@ -268,7 +344,6 @@ small {
   color: #444;
 }
 
-/* Card grid */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -277,14 +352,13 @@ small {
 }
 
 .card {
-  display: block;
-  background-color: #ffffff;
+  background-color: #fffdf8;
   padding: 1.5rem;
   border-radius: 10px;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -296,9 +370,8 @@ small {
 
 .card h3 {
   margin-top: 0;
-  color: #1e3a8a;
   font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  color: #1e3a8a;
 }
 
 .card p {
@@ -307,7 +380,7 @@ small {
 }
 
 /* ============================
-   Board/Listings Page Styles 
+   10. Board/Listings Page Styles 
    ============================ */
 
 .board-container {
@@ -391,14 +464,10 @@ input[type="checkbox"]{
   max-width: 700px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: #fffdf8;
   border-radius: 12px;
   border: 1px solid #e5e7eb;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-}
-
-.notify-container form {
-  margin-top: 1.5rem;
 }
 
 .notify-container h2 {
@@ -407,52 +476,9 @@ input[type="checkbox"]{
 }
 
 .notify-container p {
-  color: #1e3a8a;
   text-align: center;
-  margin-top: 0.75rem;
-  margin-bottom: 1.75rem;
-}
-
-.notify-container select {
-  width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  background-color: #ffffff;
-  font-size: 1rem;
-  color: 333;
-}
-
-.notify-container select:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
-}
-
-.notify-categories {
-  margin-bottom: 1.5rem;
-}
-
-.notify-categories label {
+  margin: 0.75rem 0 1.75rem;
   color: #1e3a8a;
-  display: block;
-  margin-bottom: 0.6rem;
-  padding: 0.2rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.notify-categories input[type="checkbox"] {
-  width: 1.1rem;
-  height: 1.1rem;
-  accent-color: #2563eb;
-  margin-right: 0.2rem;
-}
-
-.notify-categories label:hover {
-  background-color: #f1f5f9;
-  transition: background-color 0.2s ease;
 }
 
 .category-card,
@@ -597,25 +623,17 @@ input[type="checkbox"]{
 
 .notify-categories label {
   display: block;
-  margin-bottom: 0.6rem;
   padding: 0.2rem;
+  margin-bottom: 0.6rem;
+  color: #1e3a8a;
   border-radius: 6px;
   cursor: pointer;
 }
 
-.notify-categories input[type="checkbox"] {
-  width: 1.1rem;
-  height: 1.1rem;
-  accent-color: #2563eb;
-  margin-right: 0.2rem;
-}
-
 .notify-categories label:hover {
-  background-color: #f1f5f9;
-  transition: background-color 0.2s ease;
+  background-color: #fffdf8;
 }
 
-/* Category card & Confirm card wrapper */
 .category-card,
 .confirm-card {
   background: #fafafa;
@@ -626,71 +644,19 @@ input[type="checkbox"]{
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Adds space between card title and first ckbox */
 .category-card > label {
-  display: block;
   font-weight: bold;
   margin-bottom: 0.75rem;
 }
 
-.category-card .notify-categories label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.consent-label input[type="checkbox"] {
-  width: 1.1rem;
-  height: 1.1rem;
-  accent-color: #2563eb;
-  margin-right: 0.2rem;
-}
-
-/* Category error message (hidden by default) */
-.category-error-message {
-  display: none;
-  color: #b91c1c;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-/* Confirmation Page Button (ONLY applies here) */
-
-.confirm-btn {
-  text-decoration: none;
-  display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 0.6rem 1.4rem;
-  width: fit-content;
-  box-shadow: 0 2px 8px #444;
-  font-weight: 500;
-  text-align: center;
-  background-color: #2563eb;
-  color: #fff;
-  border-radius: 6px;
-}
-
-.confirm-btn:hover {
-  background-color: #1e40af;
-}
-
-/* ============================
-   Post Items Page Styles 
-   ============================ */
-
-/* ============================
-   About Us Page Styles 
-   ============================ */
-
-/* /* =========================
-   RESPONSIVE DESIGN
-========================= */
+/* =========================================
+   12. RESPONSIVE DESIGN
+   ========================================= */
 
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
-  /* Header */
   header h1 {
     font-size: 1.6rem;
-    margin-bottom: 0.25rem;
   }
 
   header .tagline {
@@ -698,19 +664,16 @@ input[type="checkbox"]{
     padding: 0 1rem;
   }
 
-  /* Nav stacked */
   nav {
-    display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
 
   nav a {
-    margin: 0.25rem 0;
     display: block;
+    margin: 0.25rem 0;
   }
 
-  /* Intro text */
   .intro h2 {
     font-size: 1.5rem;
   }
@@ -720,29 +683,24 @@ input[type="checkbox"]{
     padding: 0 0.5rem;
   }
 
-  /* Hero responsiveness */
   .hero {
-    height: 300px; /* Smaller hero for small screens */
+    height: 300px;
   }
 
   .hero-overlay {
-    padding-top: 60px; /* Reduce vertical spacing */
+    padding-top: 60px;
   }
 
   .hero-overlay h1 {
     font-size: 1.3rem;
   }
-
-  .hero-overlay p {
-    font-size: 0.9rem;
-  }
 }
 
-/* ===== TABLET  ===== */
+/* ===== TABLET ===== */
 @media (max-width: 900px) {
   nav a {
-    margin: 0 0.5rem;
     padding: 0.35rem 0.75rem;
+    margin: 0 0.5rem;
   }
 
   .container {
@@ -757,7 +715,6 @@ input[type="checkbox"]{
     gap: 1rem;
   }
 
-  /* Tablet hero responsiveness */
   .hero {
     height: 400px;
   }
