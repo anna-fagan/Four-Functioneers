@@ -110,12 +110,12 @@
     <main>
       <!--Similar to notify-form-->
       <form id="listingForm">
-        <label for="firstName">First Name</label>
+        <label for="sellerName">Seller Name</label>
         <input
           type="text"
-          name="firstName"
-          id="firstName"
-          placeholder="First Name"
+          name="sellerName"
+          id="sellerName"
+          placeholder="Seller Name"
           required
         />
 
@@ -214,7 +214,7 @@
           categoryError.style.display = "none";
 
           // Gather fields
-          const firstName = document.getElementById("firstName").value.trim();
+          const sellerName = document.getElementById("sellerName").value.trim();
           const item = document.getElementById("item").value.trim();
           const price = document.getElementById("price").value.trim();
           const description = document
@@ -226,7 +226,7 @@
             .join(", ");
 
           // Save to localStorage
-          localStorage.setItem("notify_firstName", firstName);
+          localStorage.setItem("notify_sellerName", sellerName);
           localStorage.setItem("notify_item", item);
           localStorage.setItem("notify_price", price);
           localStorage.setItem("notify_description", description);
