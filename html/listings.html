@@ -12,12 +12,36 @@
       content="Anna Fagan, Catherine Hawley, Kelly Daniel, Lizbeth Garcia"
     />
     <title>Buyer's Market</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body class="home-bg">
+  <!-- === ACTIVE NAV STATE (auto-highlight current page) === -->
+  <body class="listings-page">
+    <!-- GLOBAL HEADER -->
     <header>
-      <h1>Buyer's Market Posting Board</h1>
+      <div class="header-inner">
+        <a href="../index.html">
+          <img
+            src="../images/Logo-Img-Green.png"
+            alt="Buyer's Market Logo"
+            class="site-logo"
+          />
+        </a>
+
+        <h1 class="site-title">
+          Browse
+          <span class="divider">|</span>
+          <span class="sub-secondary">Items ready for a new home</span>
+        </h1>
+      </div>
     </header>
     <!-- ==== GLOBAL NAVIGATION ==== -->
     <nav>
@@ -37,19 +61,31 @@
         <div class="listing-block">
           <div class="listing-categories">
             <label for="homeDecorCheck">Home Decor</label>
-            <input type="checkbox" id="homeDecorCheck" name="home-decor"/>
+            <input type="checkbox" id="homeDecorCheck" name="home-decor" />
           </div>
           <div class="listing-categories">
             <label for="officeSuppliesCheck">Office Supplies</label>
-            <input type="checkbox" id="officeSuppliesCheck" name="office-supplies"/>
+            <input
+              type="checkbox"
+              id="officeSuppliesCheck"
+              name="office-supplies"
+            />
           </div>
           <div class="listing-categories">
             <label for="packingMaterialsCheck">Packing Materials</label>
-            <input type="checkbox" id="packingMaterialsCheck" name="packing-materials"/>
+            <input
+              type="checkbox"
+              id="packingMaterialsCheck"
+              name="packing-materials"
+            />
           </div>
           <div class="listing-categories">
             <label for="artSuppliesCheck">Art Supplies</label>
-            <input type="checkbox" id="artSuppliesCheck" name="packing-supplies"/>
+            <input
+              type="checkbox"
+              id="artSuppliesCheck"
+              name="packing-supplies"
+            />
           </div>
         </div>
       </div>
