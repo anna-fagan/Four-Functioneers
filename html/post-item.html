@@ -91,7 +91,7 @@
       }
     </style>
   </head>
-  <body class ="home-bg">
+  <body class="home-bg">
     <header>
       <h1>Buyer’s Market</h1>
       <p class="tagline">
@@ -110,6 +110,14 @@
     <main>
       <!--Similar to notify-form-->
       <form id="listingForm">
+        <label for="itemPhoto">Upload a Photo of Your Item</label>
+        <input
+          type="file"
+          name="itemPhoto"
+          id="itemPhoto"
+          required
+        />
+
         <label for="sellerName">Seller Name</label>
         <input
           type="text"
@@ -158,8 +166,7 @@
 
           <div class="notify-categories">
             <label
-              ><input type="checkbox" name="cat" value="Arts Crafts" /> Arts &
-              Crafts</label
+              ><input type="checkbox" name="cat" value="Arts Supplies" /> Arts Supplies</label
             >
             <label
               ><input type="checkbox" name="cat" value="Home Decor" /> Home
@@ -214,6 +221,7 @@
           categoryError.style.display = "none";
 
           // Gather fields
+          const itemPhoto = document.getElementById("itemPhoto");
           const sellerName = document.getElementById("sellerName").value.trim();
           const item = document.getElementById("item").value.trim();
           const price = document.getElementById("price").value.trim();
@@ -226,6 +234,8 @@
             .join(", ");
 
           // Save to localStorage
+          localStorage.setItem("notify_photoName", itemPhoto.name);
+          localStorage.setItem("notify_photoType", itemPhoto.type);
           localStorage.setItem("notify_sellerName", sellerName);
           localStorage.setItem("notify_item", item);
           localStorage.setItem("notify_price", price);
