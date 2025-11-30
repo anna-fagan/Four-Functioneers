@@ -12,41 +12,81 @@
       content="Anna Fagan, Catherine Hawley, Kelly Daniel, Lizbeth Garcia"
     />
     <title>Buyer's Market</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body>
+  <!-- === ACTIVE NAV STATE (auto-highlight current page) === -->
+  <body class="listings-page">
+    <!-- GLOBAL HEADER -->
     <header>
-      <h1>Buyer's Market Posting Board</h1>
+      <div class="header-inner">
+        <a href="../index.html">
+          <img
+            src="../images/Logo-Img-Green.png"
+            alt="Buyer's Market Logo"
+            class="site-logo"
+          />
+        </a>
+
+        <h1 class="site-title">
+          Browse
+          <span class="divider">|</span>
+          <span class="sub-secondary">Items ready for a new home</span>
+        </h1>
+      </div>
     </header>
     <!-- ==== GLOBAL NAVIGATION ==== -->
     <nav>
       <a href="../index.html">Home</a>
-      <a href="../html/post_form.html">Create a Post</a>
-      <a href="../html/listings.html">Post Board</a>
-      <a href="../html/notify-form.html">Get Notifications</a>
-      <a href="../html/about.html">About Us</a>
+      <a href="./post-item.html">Post</a>
+      <a href="./listings.html">Browse</a>
+      <a href="./notify-form.html">Alerts</a>
+      <a href="./about.html">About</a>
     </nav>
 
     <main class="container board-container">
-      <div>
+      <div class="check-card">
         <p>
           Please select the categories you want to view from the checklist below
           and then click submit categories to load the categories requested.
         </p>
-      </div>
-      <div class="listing-block">
-        <div class="listing-categories">
-          <label for="homeDecorCheck">Home Decor</label>
-          <input type="checkbox" id="homeDecorCheck" name="home-decor" />
-        </div>
-        <div class="listing-categories">
-          <label for="officeSuppliesCheck">Office Supplies</label>
-          <input
-            type="checkbox"
-            id="officeSuppliesCheck"
-            name="office-supplies"
-          />
+        <div class="listing-block">
+          <div class="listing-categories">
+            <label for="homeDecorCheck">Home Decor</label>
+            <input type="checkbox" id="homeDecorCheck" name="home-decor" />
+          </div>
+          <div class="listing-categories">
+            <label for="officeSuppliesCheck">Office Supplies</label>
+            <input
+              type="checkbox"
+              id="officeSuppliesCheck"
+              name="office-supplies"
+            />
+          </div>
+          <div class="listing-categories">
+            <label for="packingMaterialsCheck">Packing Materials</label>
+            <input
+              type="checkbox"
+              id="packingMaterialsCheck"
+              name="packing-materials"
+            />
+          </div>
+          <div class="listing-categories">
+            <label for="artSuppliesCheck">Art Supplies</label>
+            <input
+              type="checkbox"
+              id="artSuppliesCheck"
+              name="packing-supplies"
+            />
+          </div>
         </div>
       </div>
       <button id="submitButton" onclick="showPost()">Submit Categories</button>
@@ -173,7 +213,8 @@
 
     <!-- ==== GLOBAL FOOTER ==== -->
     <footer>
-      <p>Four Functioneers — Bellevue College Project</p>
+      <p>© 2025 Buyer’s Market — Four Functioneers</p>
+      <p>Team: Catherine Hawley, Anna Fagan, Kelly Daniel, Lizbeth Garcia</p>
     </footer>
 
     <script></script>

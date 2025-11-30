@@ -1,46 +1,69 @@
 /* =========================================
    Buyer’s Market — GLOBAL STYLE SHEET
+   Team: Four Functioneers
    Author: Kelly Daniel
-   Purpose: Shared styles for the Four Functioneers project
+   Purpose: Shared styles for the full website
    ========================================= */
 
-/* === GLOBAL Styles-base reference === */
-
+/* =========================================
+   1. GLOBAL + BASE ELEMENTS
+   ========================================= */
 * {
   box-sizing: border-box;
 }
 
-/* === KEEP FOOTER AT BOTTOM OF PAGE === */
-html {
+html,
+body {
   height: 100%;
 }
 
 body {
-  height: 100%;
   display: flex;
   flex-direction: column;
-
-  font-family: Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f0efea; /* warm neutral */
   color: #222;
   line-height: 1.5;
 }
 
-/* Main stretch = footer at bottom always */
 main {
-  flex: 1;
+  flex: 1; /* footer stays at bottom */
 }
 
-/* === HEADERS & FOOTERS === */
-
+/* =========================================
+   2. HEADER + FOOTER
+   ========================================= */
 header,
 footer {
-  background-color: #334155;
-  color: #ffffff;
+  background-color: rgba(51, 65, 85, 0.92); /* slate blue translucent */
+  color: #fafaf8;
   text-align: center;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  padding: 2.5rem 1rem 2rem;
+}
+
+header h1 {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+header .tagline {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+footer {
+  padding: 1rem 0;
+  min-height: 80px;
 }
 
 footer p {
@@ -48,119 +71,316 @@ footer p {
   margin: 0.25rem 0;
 }
 
-/* === NAVIGATION === */
+/* ============================================
+   2.b. GLOBAL HEADER ELEMENTS 
+   ============================================ */
+/* === Header Logo + Title Alignment  === */
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1px; /* spacing between logo + text */
+}
 
+/* Standard logo */
+.site-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin-top: 25px;
+}
+
+/* Big page title text. */
+.site-title {
+  font-size: 2.2rem; /* matches your original home header size */
+  font-weight: 500;
+  color: #fafaf8;
+}
+
+/* Tagline after title, smaller lighter, elegant styling.*/
+.sub-secondary {
+  font-size: 0.8em;
+  font-weight: 300;
+  opacity: 95;
+}
+
+/* Vertical green bar.*/
+.divider {
+  color: #99d98c;
+  opacity: 0.7;
+  font-weight: 300;
+  margin: 0 0.5rem;
+  line-height: 1.4;
+}
+/* =========================================
+   3. GLOBAL TYPOGRAPHY
+   ========================================= */
+h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #334155; /* slate blue */
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #334155;
+  margin: 0.75rem 0 0.5rem;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================
+   4. GLOBAL FORM TYPOGRAPHY SYSTEM
+   ========================================= */
+
+/* Labels (aligned with global h3 tone) helps grouping of form inputs */
+label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+/* Inputs, selects, textareas - Soft borders, subtle shadow on focus.
+Matches ADA guidelines */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 400;
+  color: #333;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+/* Focus rings */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin-right: 0.4rem;
+  accent-color: #2563eb;
+}
+
+/* Placeholder text (Safari needs extra help) */
+::placeholder {
+  color: #94a3b8; /* slate-400 */
+  opacity: 1;
+}
+
+/* Small helper text. appears under inputs */
+small {
+  display: block;
+  margin-top: 0.25rem;
+  color: #555;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Small helper text. appears under inputs. this one is notify page specific */
+.frequency-help {
+  display: block;
+  margin-top: -0.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Error message used in the JS */
+.category-error-message {
+  display: none; /* stays hidden until JS shows it */
+  color: #b91c1c;
+  font-weight: 600;
+  margin: -0.5rem 0 0.75rem;
+}
+
+/* =========================================
+   5. GLOBAL NAVIGATION
+   ========================================= */
 nav {
-  background-color: #475569;
+  background-color: #475569; /* slate grey-blue */
   padding: 0.75rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
 }
 
 nav a {
-  color: white;
+  color: #fafaf8;
   text-decoration: none;
-  margin: 0 1rem;
-  font-weight: bold;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  display: inline-block;
+  width: 120px; /* fixed width for uniform buttons */
+  padding: 0.7rem 0;
+  text-align: center;
+  font-weight: 500;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.15s ease;
 }
 
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  text-decoration: none;
+  background-color: rgba(240, 239, 234, 0.3); /* soft neutral */
 }
 
-/* === BUTTONS === */
-/* Use .btn so button styling doesn’t override <input type=submit> if used later */
+/* ACTIVE NAV STATE (auto-highlight current page) */
+.home-page nav a[href="index.html"],
+.listings-page nav a[href="./listings.html"],
+.notify-page nav a[href="./notify-form.html"],
+.about-page nav a[href="./about.html"],
+.post-page nav a[href="./post-item.html"] {
+  background-color: rgba(153, 217, 140, 0.18); /* translucent green */
+  font-weight: 600;
+  color: #fafaf8;
+  box-shadow: 0 0 0 2px rgba(71, 85, 105, 0.45), 0 4px 6px rgba(0, 0, 0, 0.25);
+}
 
+/* =========================================
+   6. GLOBAL BUTTONS (all non-nav buttons)
+   ========================================= */
 button,
-.btn {
-  background-color: #2563eb;
-  color: white;
+.btn,
+.confirm-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #95ce8d; /* softer sage green */
+  color: #ffffff;
+  font-weight: 500;
   border: none;
   border-radius: 6px;
-  padding: 0.5rem 1.2rem;
+  padding: 0.6rem 1.4rem;
   cursor: pointer;
   font-size: 0.95rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 button:hover,
-.btn:hover {
-  background-color: #1e40af;
+.btn:hover,
+.confirm-btn:hover {
+  background-color: #6aa960;
 }
 
-/* === LAYOUT HELPERS === */
+/* Confirm button layout */
+.confirm-btn {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  width: fit-content;
+}
 
+/* Spacing for multiple inline buttons */
+button + button,
+.btn + .btn {
+  margin-left: 0.75rem;
+}
+
+/* =========================================
+   7.a. LAYOUT HELPERS
+   ========================================= */
+
+/* Centers page content and adds horizontal padding.
+   Keeps page from stretching edge to edge.*/
 .container {
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem;
 }
-
-/* Utility class for future JS-driven visibility? Will we use? */
+/* Instantly hides an element, js uses this.*/
 .hidden {
   display: none !important;
 }
-
+/* Simple text-centering helper.*/
 .center {
   text-align: center;
 }
 
-/* === Shared Element Styles for FORMS === */
-
-label {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-weight: bold;
-}
-
-input,
-select,
-textarea {
+/* =========================================
+   8. HERO SECTION
+   ========================================= */
+.hero {
   width: 100%;
-  padding: 0.55rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 0.95rem;
+  height: 500px;
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 0.4rem;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  opacity: 0.05;
+  z-index: 0;
 }
 
-/* Error styles */
-.error-message {
-  color: #b91c1c;
-  font-weight: bold;
-  margin-top: -0.5rem;
-  margin-bottom: 0.75rem;
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  padding-bottom: 60px;
 }
 
-/* <small> fine print styles */
-
-small {
-  display: block;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  color: #555;
-  font-size: 0.85rem;
-  line-height: 1.4;
+.hero-overlay h1 {
+  font-size: 1.8rem;
+  color: #99d98c;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
-/* ============================
-   Home Page Styles
-   ============================ */
-
-/* Section wrapper */
+/* =========================================
+   9. HOME PAGE
+   ========================================= */
 .home-sections {
   margin-top: 2rem;
 }
 
-/* Intro section */
+.home-sections h2 {
+  border-bottom: 2px solid rgba(153, 217, 140, 0.35);
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+}
+
 .intro {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -168,7 +388,6 @@ small {
 
 .intro h2 {
   font-size: 1.8rem;
-  margin-bottom: 0.5rem;
   color: #334155;
 }
 
@@ -179,7 +398,6 @@ small {
   color: #444;
 }
 
-/* Card grid */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -187,16 +405,14 @@ small {
   margin-top: 1rem;
 }
 
-/* Individual cards */
 .card {
-  display: block;
-  background-color: #ffffff;
+  background-color: #fffdf8;
   padding: 1.5rem;
   border-radius: 10px;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -206,59 +422,54 @@ small {
   border-color: #cbd5e1;
 }
 
-/* Card titles */
 .card h3 {
   margin-top: 0;
-  color: #1e3a8a;
   font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  color: #1e3a8a;
 }
 
-/* Card text */
 .card p {
   font-size: 0.95rem;
   color: #475569;
 }
 
 /* ============================
-   Board/Listings Page Styles 
+   10. Board/Listings Page Styles 
    ============================ */
 
-/* Space around main content */
 .board-container {
   padding: 1rem 0;
 }
 
-/* Form spacing */
 .board-container form {
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
-/* Global styling */
 .board-container input[type="text"] {
   max-width: 90%;
 }
 
-/* Placeholder for where posts will go later */
 .board-grid {
   margin-top: 2rem;
 }
+
 .listing-image-container {
   width: 40%;
 }
+
 .listing-block {
-  display: block;
+  display: flex;
+  flex-direction: row;
 }
 
 .listing-categories {
-  display: inline-block;
+  display: flex;
   width: 1fr;
   padding: 5px;
   margin: 15px;
 }
 
-/* Card styling */
 .post-card {
   background-color: white;
   border: 1px solid #ccc;
@@ -268,12 +479,10 @@ small {
   margin-top: 1rem;
 }
 
-/* Title spacing inside cards (for later when JS adds posts) */
 .post-card h2 {
   margin-top: 0;
 }
 
-/* Contact text (future use) */
 .post-card-contact {
   font-size: 0.9rem;
   color: #555;
@@ -287,26 +496,33 @@ small {
   display: none;
 }
 
+.packing-supplies {
+  display: none;
+}
+
+.art-supplies {
+  display: none;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-left: 1rem;
+}
+
 /* ============================
-   Notify Form Page Styles
+   11. NOTIFY PAGE (Form + Confirmation)
    ============================ */
 
-/* Page container */
+/* Main centered card for the Alert form & Confirmation page */
 .notify-container {
   width: 90%;
   max-width: 700px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: #fffdf8;
   border-radius: 12px;
   border: 1px solid #e5e7eb;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-}
-
-/* form */
-
-.notify-container form {
-  margin-top: 1.5rem;
 }
 
 /* Page heading */
@@ -318,63 +534,29 @@ small {
 /* Intro paragraph */
 .notify-container p {
   text-align: center;
-  margin-top: 0.75rem;
-  margin-bottom: 1.75rem;
+  margin: 0.75rem 0 1.75rem;
+  color: #1e3a8a;
 }
 
-.notify-container select {
-  width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  background-color: #ffffff;
-  font-size: 1rem;
-  color: 333;
-}
-
-.notify-container select:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
-}
-
-/* Submit button, horiz center, no stretch */
-.notify-container button[type="submit"] {
-  display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 0.6rem 1.4rem;
-  width: auto;
-  box-shadow: 0 2px 8px #444;
-  font-weight: 600;
-}
-
-/* Category checkboxes layout */
+/* Category checkbox layout */
 .notify-categories {
   margin-bottom: 1.5rem;
 }
 
 .notify-categories label {
   display: block;
-  margin-bottom: 0.6rem;
   padding: 0.2rem;
+  margin-bottom: 0.6rem;
+  color: #1e3a8a;
   border-radius: 6px;
   cursor: pointer;
 }
 
-.notify-categories input[type="checkbox"] {
-  width: 1.1rem;
-  height: 1.1rem;
-  accent-color: #2563eb;
-  margin-right: 0.2rem;
-}
-
 .notify-categories label:hover {
-  background-color: #f1f5f9;
-  transition: background-color 0.2s ease;
+  background-color: #fffdf8;
 }
 
-/* Category card & Confirm card wrapper */
+/* White blocks around groups on form & confirmation */
 .category-card,
 .confirm-card {
   background: #fafafa;
@@ -385,7 +567,6 @@ small {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Adds space between card title and first ckbox */
 .category-card > label {
   display: block;
   font-weight: bold;
@@ -397,6 +578,7 @@ small {
   margin-bottom: 0.5rem;
 }
 
+/* Agree to terms checkbox */
 .consent-label input[type="checkbox"] {
   width: 1.1rem;
   height: 1.1rem;
@@ -404,7 +586,7 @@ small {
   margin-right: 0.2rem;
 }
 
-/* Category error message (hidden by default) */
+/* Error message for missing categories */
 .category-error-message {
   display: none;
   color: #b91c1c;
@@ -412,10 +594,9 @@ small {
   margin-bottom: 1rem;
 }
 
-/* Confirmation Page Button (ONLY applies here) */
-
-.confirm-btn {
-  text-decoration: none;
+/* Submit + return buttons */
+.confirm-btn,
+.notify-container button[type="submit"] {
   display: block;
   margin: 1.5rem auto 0 auto;
   padding: 0.6rem 1.4rem;
@@ -428,27 +609,60 @@ small {
   border-radius: 6px;
 }
 
-.confirm-btn:hover {
+.confirm-btn:hover,
+.notify-container button[type="submit"]:hover {
   background-color: #1e40af;
 }
 
-/* ============================
-   Post Items Page Styles 
-   ============================ */
+/* For visual grouping on confirmation page */
+.check-card {
+  display: block;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+}
 
-/* ============================
-   About Us Page Styles 
-   ============================ */
+/* =========================================
+   11.b NOTIFY CONFIRMATION STYLES
+   ========================================= */
 
-/* =========================
-          RESPONSIVE DESIGN
-    =========================== */
+/* Confirmation greeting */
+.confirm-greeting {
+  text-align: center;
+  color: #1e3a8a;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
 
-/*    MOBILE (phones) */
+/* “Here are your alert details” line */
+.confirm-card > p:nth-of-type(2) {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #334155;
+}
+
+/* Details list */
+.confirm-details-list {
+  list-style-type: disc;
+  padding-left: 1.3rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* =========================================
+   12. RESPONSIVE DESIGN
+   ========================================= */
+
+/* ===== MOBILE ===== */
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.6rem;
-    margin-bottom: 0.25rem;
   }
 
   header .tagline {
@@ -456,19 +670,16 @@ small {
     padding: 0 1rem;
   }
 
-  /* Stack nav links */
   nav {
-    display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
 
   nav a {
-    margin: 0.25rem 0;
     display: block;
+    margin: 0.25rem 0;
   }
 
-  /* Intro section */
   .intro h2 {
     font-size: 1.5rem;
   }
@@ -477,13 +688,25 @@ small {
     font-size: 0.95rem;
     padding: 0 0.5rem;
   }
+
+  .hero {
+    height: 300px;
+  }
+
+  .hero-overlay {
+    padding-top: 60px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.3rem;
+  }
 }
 
-/* TABLET */
+/* ===== TABLET ===== */
 @media (max-width: 900px) {
   nav a {
-    margin: 0 0.5rem;
     padding: 0.35rem 0.75rem;
+    margin: 0 0.5rem;
   }
 
   .container {
@@ -497,224 +720,16 @@ small {
   .card-grid {
     gap: 1rem;
   }
-}
 
-.home-decor {
-  display: none;
-}
+  .hero {
+    height: 400px;
+  }
 
-.office-supplies {
-  display: none;
-}
+  .hero-overlay {
+    padding-top: 100px;
+  }
 
-/* ============================
-   Notify Form Page Styles
-   ============================ */
-
-/* Page container */
-.notify-container {
-  width: 90%;
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-}
-
-/* form */
-
-.notify-container form {
-  margin-top: 1.5rem;
-}
-
-/* Page heading */
-.notify-container h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-/* Intro paragraph */
-.notify-container p {
-  text-align: center;
-  margin-top: 0.75rem;
-  margin-bottom: 1.75rem;
-}
-
-.notify-container select {
-  width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  background-color: #ffffff;
-  font-size: 1rem;
-  color: 333;
-}
-
-.notify-container select:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
-}
-
-/* Submit button, horiz center, no stretch */
-.notify-container button[type="submit"] {
-  display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 0.6rem 1.4rem;
-  width: auto;
-  box-shadow: 0 2px 8px #444;
-  font-weight: 600;
-}
-
-/* Category checkboxes layout */
-.notify-categories {
-  margin-bottom: 1.5rem;
-}
-
-.notify-categories label {
-  display: block;
-  margin-bottom: 0.6rem;
-  padding: 0.2rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.notify-categories input[type="checkbox"] {
-  width: 1.1rem;
-  height: 1.1rem;
-  accent-color: #2563eb;
-  margin-right: 0.2rem;
-}
-
-.notify-categories label:hover {
-  background-color: #f1f5f9;
-  transition: background-color 0.2s ease;
-}
-
-/* Category card & Confirm card wrapper */
-.category-card,
-.confirm-card {
-  background: #fafafa;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 1.25rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-/* Adds space between card title and first ckbox */
-.category-card > label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-}
-
-.category-card .notify-categories label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.consent-label input[type="checkbox"] {
-  width: 1.1rem;
-  height: 1.1rem;
-  accent-color: #2563eb;
-  margin-right: 0.2rem;
-}
-
-/* Category error message (hidden by default) */
-.category-error-message {
-  display: none;
-  color: #b91c1c;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-/* Confirmation Page Button (ONLY applies here) */
-
-.confirm-btn {
-  text-decoration: none;
-  display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 0.6rem 1.4rem;
-  width: fit-content;
-  box-shadow: 0 2px 8px #444;
-  font-weight: 500;
-  text-align: center;
-  background-color: #2563eb;
-  color: #fff;
-  border-radius: 6px;
-}
-
-.confirm-btn:hover {
-  background-color: #1e40af;
-}
-
-/* ============================
-   Post Items Page Styles 
-   ============================ */
-
-/* ============================
-   About Us Page Styles 
-   ============================ */
-
-/* =========================
-          RESPONSIVE DESIGN
-    =========================== */
-
-/*    MOBILE (phones) */
-@media (max-width: 600px) {
-  header h1 {
+  .hero-overlay h1 {
     font-size: 1.6rem;
-    margin-bottom: 0.25rem;
-  }
-
-  header .tagline {
-    font-size: 0.95rem;
-    padding: 0 1rem;
-  }
-
-  /* Stack nav links */
-  nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  nav a {
-    margin: 0.25rem 0;
-    display: block;
-  }
-
-  /* Intro section */
-  .intro h2 {
-    font-size: 1.5rem;
-  }
-
-  .intro p {
-    font-size: 0.95rem;
-    padding: 0 0.5rem;
-  }
-}
-
-/* TABLET */
-@media (max-width: 900px) {
-  nav a {
-    margin: 0 0.5rem;
-    padding: 0.35rem 0.75rem;
-  }
-
-  .container {
-    width: 95%;
-  }
-
-  .intro h2 {
-    font-size: 1.7rem;
-  }
-
-  .card-grid {
-    gap: 1rem;
   }
 }

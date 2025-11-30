@@ -8,24 +8,50 @@
 
     <!-- GLOBAL CSS -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <body>
+  <body class="home-page">
+    <!-- GLOBAL HEADER -->
     <header>
-      <h1>Buyer’s Market</h1>
-      <p class="tagline">
-        A simple way to give and receive goods in your community.
-      </p>
+      <div class="header-inner">
+        <a href="index.html">
+          <img
+            src="./images/Logo-Img-Green.png"
+            alt="Buyer's Market Logo"
+            class="site-logo"
+          />
+        </a>
+
+        <h1 class="site-title">
+          Buyer’s Market
+          <span class="divider">|</span>
+          <span class="sub-secondary"> Sharing made simple </span>
+        </h1>
+      </div>
     </header>
 
     <!-- === NAVIGATION === -->
     <nav>
       <a href="index.html">Home</a>
-      <a href="./html/post-item.html">Create a Post</a>
-      <a href="./html/listings.html">Listings</a>
-      <a href="./html/notify-form.html">Get Notifications</a>
-      <a href="./html/about.html">About Us</a>
+      <a href="./html/post-item.html">Post</a>
+      <a href="./html/listings.html">Browse</a>
+      <a href="./html/notify-form.html">Alerts</a>
+      <a href="./html/about.html">About</a>
     </nav>
+
+    <!-- Hero -->
+
+    <div class="hero">
+      <div class="hero-overlay">
+        <h1>A Place Where Every Item Finds a New Home</h1>
+      </div>
+    </div>
 
     <!-- === MAIN CONTENT === -->
     <main class="container home-sections">
@@ -55,9 +81,10 @@
         </a>
       </section>
     </main>
-
+    <!-- ==== GLOBAL FOOTER ==== -->
     <footer>
       <p>© 2025 Buyer’s Market — Four Functioneers</p>
+      <p>Team: Catherine Hawley, Anna Fagan, Kelly Daniel, Lizbeth Garcia</p>
     </footer>
   </body>
 </html>
