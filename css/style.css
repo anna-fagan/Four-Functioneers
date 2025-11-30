@@ -276,7 +276,7 @@ button,
   padding: 0.6rem 1.4rem;
   cursor: pointer;
   font-size: 0.95rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 button:hover,
@@ -319,6 +319,23 @@ button + button,
   text-align: center;
 }
 
+/*centers any button or element*/
+.btn-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+/*right align any button or element*/
+.btn-right {
+  display: block;
+  margin-left: auto;
+  width: fit-content;
+}
+/*full width*/
+.btn-full {
+  width: 100%;
+}
 /* =========================================
    8. HERO SECTION
    ========================================= */
@@ -465,6 +482,7 @@ button + button,
 
 .listing-categories {
   display: flex;
+  /*flex-wrap: wrap; <--add if you want the row to auto wrap w/more categories*/
   width: 1fr;
   padding: 5px;
   margin: 15px;
@@ -505,12 +523,12 @@ button + button,
 }
 
 input[type="checkbox"] {
-  transform: scale(1.5);
+  transform: scale(1);
   margin-left: 1rem;
 }
 
 /* ============================
-   11. NOTIFY PAGE (Form + Confirmation)
+   11. NOTIFY PAGE (Form + Confirmation) **USED ON POST FORM TOO
    ============================ */
 
 /* Main centered card for the Alert form & Confirmation page */
@@ -578,14 +596,6 @@ input[type="checkbox"] {
   margin-bottom: 0.5rem;
 }
 
-/* Agree to terms checkbox */
-.consent-label input[type="checkbox"] {
-  width: 1.1rem;
-  height: 1.1rem;
-  accent-color: #2563eb;
-  margin-right: 0.2rem;
-}
-
 /* Error message for missing categories */
 .category-error-message {
   display: none;
@@ -597,21 +607,23 @@ input[type="checkbox"] {
 /* Submit + return buttons */
 .confirm-btn,
 .notify-container button[type="submit"] {
+  /* centers button to container */
   display: block;
   margin: 1.5rem auto 0 auto;
-  padding: 0.6rem 1.4rem;
   width: fit-content;
-  box-shadow: 0 2px 8px #444;
+  /* -------------------- */
+  padding: 0.6rem 1.4rem;
+  box-shadow: 0 2px 6px #444;
   font-weight: 500;
   text-align: center;
-  background-color: #2563eb;
+  background-color: #95ce8d;
   color: #fff;
   border-radius: 6px;
 }
 
 .confirm-btn:hover,
 .notify-container button[type="submit"]:hover {
-  background-color: #1e40af;
+  background-color: #6aa960;
 }
 
 /* For visual grouping on confirmation page */
@@ -702,6 +714,19 @@ input[type="checkbox"] {
   }
 }
 
+/* ===== HERO VISIBILITY FIX (MOBILE ONLY) ===== */
+@media (max-width: 600px) {
+  .hero-overlay {
+    backdrop-filter: none !important; /* Prevent WebKit from hiding bg */
+    background: rgba(0, 0, 0, 0.35); /* Keep same dark appearance */
+  }
+
+  .hero::before {
+    background-image: url("../images/hero.jpg"); /* Ensure image renders */
+    opacity: 0.15; /* Slight boost so hero doesn't vanish */
+  }
+}
+
 /* ===== TABLET ===== */
 @media (max-width: 900px) {
   nav a {
@@ -731,5 +756,34 @@ input[type="checkbox"] {
 
   .hero-overlay h1 {
     font-size: 1.6rem;
+  }
+}
+
+/* ===== RESPONSIVE FIXES FOR LISTINGS PAGE ===== */
+
+/* Tablet — 3 per row */
+@media (max-width: 900px) {
+  .listing-block {
+    flex-wrap: wrap;
+    gap: 20px; /* spacing between items */
+  }
+
+  .listing-categories {
+    width: 30%; /* 3 per row */
+    margin: 10px 0;
+  }
+}
+
+/* Mid-mobile — 2 per row */
+@media (max-width: 650px) {
+  .listing-categories {
+    width: 45%; /* 2 per row */
+  }
+}
+
+/* Small phones — 1 per row */
+@media (max-width: 420px) {
+  .listing-categories {
+    width: 100%; /* full width */
   }
 }
