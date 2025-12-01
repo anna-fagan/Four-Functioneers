@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Four Functioneers" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Four Functioneers">
     <title>Buyer’s Market</title>
 
     <!-- GOOGLE FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
-    />
+    >
     <!-- GLOBAL CSS -->
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <!-- === ACTIVE NAV STATE (auto-highlight current page) === -->
   <body class="notify-page">
@@ -26,7 +26,7 @@
             src="../images/Logo-Img-Green.png"
             alt="Buyer's Market Logo"
             class="site-logo"
-          />
+          >
         </a>
 
         <h1 class="site-title">
@@ -57,14 +57,14 @@
       <form>
         <!-- “First Name” field  (required) -->
 
-        <label for="firstName">Your Name (required)</label>
+        <label for="yourName">Your Name (required)</label>
         <input
           type="text"
-          id="firstName"
-          name="firstName"
-          placeholder="Your Name"
+          id="yourName"
+          name="yourName"
+          placeholder="Your name"
           required
-        />
+        >
 
         <label for="email">Email (required)</label>
         <input
@@ -73,7 +73,7 @@
           name="email"
           placeholder="you@example.com"
           required
-        />
+        >
 
         <!-- “City” dropdown (Bellevue only, required) -->
 
@@ -83,28 +83,29 @@
           <option value="Bellevue">Bellevue</option>
         </select>
 
+
         <div class="category-card">
           <label>Categories (choose one or more)</label>
 
           <div class="notify-categories">
             <label
-              ><input type="checkbox" name="cat" value="Arts Crafts" /> Arts &
+              ><input type="checkbox" name="cat" value="Arts Crafts"> Arts &
               Crafts</label
             >
             <label
-              ><input type="checkbox" name="cat" value="Home Decor" /> Home
+              ><input type="checkbox" name="cat" value="Home Decor"> Home
               Decor</label
             >
             <label
-              ><input type="checkbox" name="cat" value="Home Furnishings" />
+              ><input type="checkbox" name="cat" value="Home Furnishings">
               Home Furnishings</label
             >
             <label
-              ><input type="checkbox" name="cat" value="Office Supplies" />
+              ><input type="checkbox" name="cat" value="Office Supplies">
               Office Supplies</label
             >
             <label
-              ><input type="checkbox" name="cat" value="Packing Materials" />
+              ><input type="checkbox" name="cat" value="Packing Materials">
               Packing Materials</label
             >
           </div>
@@ -116,10 +117,16 @@
         </div>
 
         <!-- “Notification Frequency” dropdown -->
+<<<<<<< HEAD
 
         <label for="frequency">Alert Frequency (required)</label>
 
         <select id="frequency" name="frequency" required>
+=======
+        <label for="frequency">How often would you like to receive updates?</label>
+        <select id="frequency" name="frequency" required>
+
+>>>>>>> 4920ba1b12d565164e7332860105258909abfe14
           <option value="" disabled selected>Select frequency</option>
 
           <option
@@ -146,7 +153,7 @@
         <!-- Consent checkbox (“I agree to receive notifications”) -->
 
         <label class="consent-label">
-          <input type="checkbox" id="consent" name="consent" required />
+          <input type="checkbox" id="consent" name="consent" required>
           I agree to receive email notifications about new items.
           <small
             >Your email will only be used for Buyer’s Market
@@ -186,7 +193,7 @@
           // local store and redirect
 
           // --- Collect values from the form ---
-          const firstName = document.getElementById("firstName").value.trim();
+          const yourName = document.getElementById("yourName").value.trim();
           const email = document.getElementById("email").value.trim();
           const city = document.getElementById("city").value;
           const frequency = document.getElementById("frequency").value;
@@ -200,7 +207,7 @@
             .join(", ");
 
           // --- Save everything to localStorage ---
-          localStorage.setItem("notify_firstName", firstName);
+          localStorage.setItem("notify_yourName", yourName);
           localStorage.setItem("notify_email", email);
           localStorage.setItem("notify_city", city);
           localStorage.setItem("notify_categories", categories);

@@ -1,0 +1,8 @@
+Buyer's Market
+By Catherine Hawley, Anna Fagan, Kelly Daniel, Lizbeth Garcia
+For DEV 109 at Bellevue College
+
+Below is a list of documented extensions of our coding on the website
+    ADA styling on more than just the home page (all pages conform to ada styling)
+    Chosing styles checkboxes updating the DOM and external CSS
+    Clickable site logo that leads the user back to the home page of the website
