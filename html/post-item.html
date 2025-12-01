@@ -95,9 +95,10 @@
       <a href="./notify-form.html">Alerts</a>
       <a href="./about.html">About</a>
     </nav>
+    <main class="notify-container post-container">
+      <h2>Start Your Post</h2>
+      <p>We just need a few details</p>
 
-    <main>
-      <!--Similar to notify-form-->
       <form id="listingForm">
         <h2>Give us the Details</h2>
         <p>
@@ -106,16 +107,16 @@
         <label for="itemPhoto">Upload a Photo of Your Item</label>
         <input type="file" name="itemPhoto" id="itemPhoto" required />
 
-        <label for="sellerName">Seller Name</label>
+        <label for="sellerName">Your Name (required)</label>
         <input
           type="text"
           name="sellerName"
           id="sellerName"
-          placeholder="Seller Name"
+          placeholder="Your Name"
           required
         />
 
-        <label for="email">Email</label>
+        <label for="email">Email (required)</label>
         <input
           type="email"
           name="email"
@@ -180,13 +181,14 @@
           Choose at least one category to continue.
         </div>
 
-        <button type="reset">Reset</button>
-        <button type="submit" class="create-listing-button">
-          Create My Listing
-        </button>
+        <div class="post-buttons">
+          <button type="submit" class="create-listing-button">
+            Create My Post
+          </button>
+          <button type="reset">Reset</button>
+        </div>
       </form>
     </main>
-
     <!-- ==== GLOBAL FOOTER ==== -->
     <footer>
       <p>© 2025 Buyer’s Market — Four Functioneers</p>
